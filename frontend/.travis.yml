@@ -7,3 +7,13 @@ before_install:
 
 script:
   - docker run pantsli/frontend npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: " DockerReact-env"
+  backet_name: "elasticbeanstalk-us-east-2-453259069771"
+  bucket_path: 'docker-react'
+  on:
+    branch: master

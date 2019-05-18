@@ -16,3 +16,5 @@ FROM nginx
 # 2. Copy over the result of 'npm run build'
 COPY --from=builder /app/build /usr/share/nginx/html
 # 3. Start nginx
+
+EXPOSE 80
